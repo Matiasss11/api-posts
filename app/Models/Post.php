@@ -10,6 +10,8 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['title', 'slug', 'user_id', 'category_id'];
+
     public function getExcerptAttribute()
     {
         return substr($this->content, 0, 120);

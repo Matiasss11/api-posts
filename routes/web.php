@@ -17,4 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/export-excel', [App\Http\Controllers\PostController::class, 'exportIntoExcel']);
+Route::get('/export-excel', [App\Http\Controllers\PostController::class, 'exportIntoExcel'])->name('post.export');
+
+Route::get('/import-form', [App\Http\Controllers\PostController::class, 'importForm']);
+
+Route::post('/import-excel', [App\Http\Controllers\PostController::class, 'importFromExcel'])->name('post.import');
